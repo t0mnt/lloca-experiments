@@ -61,6 +61,7 @@ class TaggingExperiment(BaseExperiment):
         ]:
             # Non-equivariant or canonicalization
             self.cfg.model.in_channels = 7 + self.extra_scalars
+            self.cfg.model.framesnet.mass_reg = self.cfg.data.mass_reg
             if self.cfg.model.add_fourmomenta_backbone:
                 self.cfg.model.in_channels += 4
 
